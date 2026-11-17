@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Uppdrag Stella – Ficklampan och jorden</title>
+<style>
+:root{color-scheme:dark;--bg:#061129;--panel:#0f2443;--cyan:#6de8fa;--cream:#ffeaa5;--white:#f7fbff;--muted:#b9d0e8}
+*{box-sizing:border-box}body{margin:0;color:var(--white);font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif;background:radial-gradient(ellipse at 25% 12%,#16395e 0%,#07142d 48%,#030816 100%);min-height:100vh}
+.wrap{max-width:1380px;margin:auto;padding:20px 26px 18px}.heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}.brand{font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);font-size:.8rem}h1{margin:.15em 0 .05em;font-size:clamp(1.8rem,3.5vw,3.3rem);letter-spacing:-.045em}p{margin:.2em 0;color:var(--muted)}.logo{background:#102746;border:1px solid #37658a;border-radius:18px;padding:10px 14px;text-align:center;font-weight:900;color:#97edff;white-space:nowrap}.logo small{display:block;letter-spacing:.18em;font-size:.57rem;color:#c4d7e8}.scene{margin-top:16px;border:1px solid #285074;border-radius:24px;background:linear-gradient(135deg,#0c2442,#06132c);box-shadow:0 18px 55px #0008;overflow:hidden;position:relative}.scene svg{width:100%;height:auto;max-height:590px;display:block}.hint{position:absolute;bottom:14px;left:16px;font-size:.8rem;background:#071b35d9;padding:7px 12px;border-radius:30px;color:#d9f1ff;border:1px solid #386385;pointer-events:none}.controls{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:12px;margin-top:12px}.panel{background:#102441;border:1px solid #2a5377;border-radius:17px;padding:14px 17px;min-height:102px}.panel strong{font-size:.85rem;color:#aee9fa;display:block;margin-bottom:8px}.buttons{display:flex;gap:8px;flex-wrap:wrap;align-items:center}button{font:inherit;background:#203d60;color:#fff;border:1px solid #53799a;border-radius:12px;padding:10px 15px;font-weight:750;cursor:pointer;transition:background .15s;min-height:45px}button:hover{background:#31567d}button.primary{background:#13a4ba;color:#031927;border-color:#62e8f3}button.primary:hover{background:#5bd4e1}button:focus-visible,input:focus-visible{outline:3px solid #ffd96e;outline-offset:3px}.track{width:100%;accent-color:#74e5f1;cursor:pointer}.meta{display:flex;gap:14px;justify-content:space-between;font-size:.82rem;color:#d9e9ff}.status{font-weight:800;color:#ffe6a0;margin-bottom:4px}.foot{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:12px;font-size:.84rem;color:#c4d3e5}.explain{max-width:800px}.note{color:#9ab4ce}kbd{font:inherit;font-weight:700;color:#fcecb7}@media(max-width:800px){.wrap{padding:10px}.controls{grid-template-columns:1fr}.logo{display:none}.foot{display:block}.hint{font-size:.65rem}.scene{border-radius:12px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+ <div class="heading"><div><div class="brand">🚀 Uppdrag Stella · Forskningsstation</div><h1>Ficklampan och jorden</h1><p>Följ den gula punkten när hela jorden snurrar – när är det dag och natt?</p></div><div class="logo">NOVA<small>RYMDFORSKNING</small></div></div>
+ <section class="scene" aria-label="Interaktiv modell av ficklampa som lyser på en snurrande jord">
+ <svg viewBox="0 0 1200 600" role="img" aria-label="Ficklampa till vänster. Jorden till höger. En gul punkt visar en plats på jorden som roterar mellan dag och natt.">
+ <defs>
+ <radialGradient id="sphere"><stop offset="0" stop-color="#5bc3e4"/><stop offset=".67" stop-color="#0875b1"/><stop offset="1" stop-color="#084777"/></radialGradient>
+ <radialGradient id="lampGlow"><stop offset="0" stop-color="#fffde6" stop-opacity=".87"/><stop offset=".35" stop-color="#ffe989" stop-opacity=".36"/><stop offset="1" stop-color="#fff6a1" stop-opacity="0"/></radialGradient>
+ <linearGradient id="beam"><stop offset="0" stop-color="#fff0a5" stop-opacity=".62"/><stop offset="1" stop-color="#ffd65d" stop-opacity=".11"/></linearGradient>
+ <linearGradient id="darkOverlay"><stop offset="0" stop-color="#041631" stop-opacity=".84"/><stop offset="1" stop-color="#001026" stop-opacity=".95"/></linearGradient>
+ <clipPath id="earthClip"><circle cx="850" cy="299" r="173"/></clipPath>
+ <clipPath id="nightClip"><rect x="850" y="120" width="190" height="365"/></clipPath>
+ <filter id="glow"><feGaussianBlur stdDeviation="7"/></filter>
+ </defs>
+ <g opacity=".85" fill="#fff" id="stars">
+ <circle cx="95" cy="67" r="1.5"/><circle cx="190" cy="148" r="1.1"/><circle cx="420" cy="88" r="1.3"/><circle cx="578" cy="155" r="2"/><circle cx="728" cy="65" r="1.5"/><circle cx="1070" cy="85" r="1.8"/><circle cx="1120" cy="460" r="1.2"/><circle cx="121" cy="505" r="1.6"/><circle cx="475" cy="535" r="1"/><circle cx="680" cy="467" r="1.3"/><circle cx="1045" cy="550" r="1.3"/>
+ </g>
+ <g id="lightGroup">
+   <ellipse cx="310" cy="300" rx="320" ry="220" fill="url(#lampGlow)"/>
+   <path d="M325 279 L850 128 A173 173 0 0 1 850 472 L325 321Z" fill="url(#beam)"/>
+   <path d="M325 296 L690 194" stroke="#ffed9b" opacity=".55" stroke-width="3" stroke-dasharray="15 15"/>
+   <path d="M325 310 L689 310" stroke="#ffed9b" opacity=".55" stroke-width="3" stroke-dasharray="15 15"/>
+   <path d="M325 324 L690 424" stroke="#ffed9b" opacity=".55" stroke-width="3" stroke-dasharray="15 15"/>
+ </g>
+ <g transform="translate(95 249)">
+   <rect x="0" y="28" width="120" height="56" rx="12" fill="#7c9fbb" stroke="#d1e7f9" stroke-width="3"/>
+   <rect x="52" y="28" width="22" height="56" fill="#4c7393"/>
+   <path d="M118 14 L208 0 L225 112 L118 97Z" fill="#9cbcd3" stroke="#d6ecff" stroke-width="3"/>
+   <ellipse cx="222" cy="56" rx="17" ry="54" fill="#ffc45c" stroke="#fff9d7" stroke-width="4"/>
+   <rect x="22" y="12" width="45" height="13" rx="7" fill="#253e58"/>
+ </g>
+ <text x="190" y="412" fill="#d6ebfc" font-size="28" text-anchor="middle" font-weight="750">FICKLAMPA</text>
+ <g id="earth">
+  <circle cx="850" cy="299" r="180" fill="#63c9ff" opacity=".45" filter="url(#glow)"/>
+  <circle cx="850" cy="299" r="173" fill="url(#sphere)" stroke="#75cff8" stroke-width="3"/>
+  <g clip-path="url(#earthClip)" opacity=".92"><g id="landRotation">
+   <path d="M766 158 Q800 139 820 174 L801 211 L839 232 L824 272 L781 265 L757 290 L735 251 L713 246 L710 199 Z" fill="#51a478"/>
+   <path d="M841 294 Q877 268 901 287 L916 340 L898 376 L907 409 L880 445 L854 417 L862 374 L838 349 Z" fill="#63ae74"/>
+   <path d="M942 171 Q1000 169 1032 230 L996 277 L960 251 L937 227 Z" fill="#4ba47c"/>
+   <path d="M980 320 L1015 342 L1012 384 L976 407 L967 383Z" fill="#6ab178"/>
+   <path d="M682 323 L732 338 L742 373 L712 393 L690 360Z" fill="#6ab178"/>
+   <path d="M728 200 Q770 187 785 195" fill="none" stroke="#d7f8ff" stroke-width="12" stroke-linecap="round" opacity=".75"/>
+   <path d="M885 182 Q940 168 976 190" fill="none" stroke="#d7f8ff" stroke-width="10" stroke-linecap="round" opacity=".65"/>
+   <path d="M716 381 Q760 402 790 398" fill="none" stroke="#d7f8ff" stroke-width="11" stroke-linecap="round" opacity=".6"/>
+  </g></g>
+  <g id="nightCover" clip-path="url(#nightClip)"><rect x="850" y="120" width="190" height="360" fill="url(#darkOverlay)"/><path d="M850 128 L850 470" stroke="#b7e3f2" stroke-width="2" opacity=".55"/></g>
+  <circle id="fullDark" cx="850" cy="299" r="173" fill="#031124" opacity=".93" display="none"/>
+  <circle cx="850" cy="299" r="175" fill="none" stroke="#85deef" stroke-width="2" opacity=".4"/>
+  <circle cx="850" cy="299" r="195" fill="none" stroke="#7ed6ec" stroke-width="1.8" stroke-dasharray="7 12" opacity=".34"/>
+  <g id="pinRotation"><g id="pin" style="cursor:grab"><circle cx="763" cy="249" r="24" fill="#fff4a4" opacity=".23"/><circle cx="763" cy="249" r="12" fill="#ffe566" stroke="#ffffff" stroke-width="3"/><path d="M763 226 L763 209" stroke="#ffea76" stroke-width="3" stroke-linecap="round"/><circle cx="763" cy="205" r="4" fill="#ffed8d"/></g></g>
+ </g>
+ <text x="766" y="101" fill="#ffebaa" font-size="28" text-anchor="middle" font-weight="800">DAG</text>
+ <text x="952" y="101" fill="#a9c7f9" font-size="28" text-anchor="middle" font-weight="800">NATT</text>
+ <text x="850" y="526" fill="#eef9ff" font-size="31" text-anchor="middle" font-weight="800">JORDEN (BOLLEN)</text>
+ <text x="850" y="566" fill="#bbd7e8" font-size="20" text-anchor="middle">Den gula punkten sitter fast på vår plats</text>
+ <g id="offMark" display="none"><text x="490" y="126" fill="#fff2ca" font-size="29" font-weight="800">LAMPAN ÄR SLÄCKT</text></g>
+ </svg>
+ <div class="hint">Förenklad modell · Jordytan och vår plats snurrar tillsammans · Inte skalenlig</div>
+ </section>
+ <section class="controls" aria-label="Kontroller">
+  <div class="panel"><strong>1. Ficklampan</strong><div class="buttons"><button id="toggleLight" class="primary" aria-pressed="true">💡 Släck lampan</button></div></div>
+  <div class="panel"><strong>2. Snurra jorden</strong><div class="buttons"><button id="togglePlay" class="primary">▶ Starta rotation</button><button id="quarter">↻ Ett kvarts varv</button><button id="reset">Börja om</button></div></div>
+  <div class="panel"><strong>3. Vrid hela jorden</strong><input id="angle" class="track" type="range" min="0" max="360" step="1" value="180" aria-label="Vrid jorden och vår plats"/><div class="meta"><span id="rotationText">Halvt varv</span><span id="dayNight">☀️ DAG</span></div></div>
+ </section>
+ <div class="foot"><div class="explain"><div class="status" id="statusText">☀️ På vår plats är det DAG.</div><span id="explanation">Ficklampan står stilla medan jorden snurrar, och vår plats följer med.</span></div><span class="note">Tips för storbild: tryck <kbd>F11</kbd> för helskärm (Windows).</span></div>
+</main>
+<script>
+(()=>{
+ const $=id=>document.getElementById(id);
+ const angle=$('angle'), landRotation=$('landRotation'),pinRotation=$('pinRotation'), lightGroup=$('lightGroup'),nightCover=$('nightCover');
+ let deg=180, lit=true,playing=false,raf=0,last=0;
+ function paint(){
+  // Rotera både kontinenterna och markeringen: platsen är fäst vid jorden.
+  // Ficklampan och gränsen mellan ljus/mörker förblir stilla.
+  const rotation=deg-180;
+  landRotation.setAttribute('transform',`rotate(${rotation} 850 299)`);
+  pinRotation.setAttribute('transform',`rotate(${rotation} 850 299)`);
+  const a=rotation*Math.PI/180;
+  const x=850-87*Math.cos(a)+50*Math.sin(a);
+  const day=x<850;
+  $('dayNight').textContent=lit?(day?'☀️ DAG':'🌙 NATT'):'🌑 MÖRKT';
+  $('statusText').textContent=!lit?'🌑 Lampan är släckt.':(day?'☀️ På vår plats är det DAG.':'🌙 På vår plats är det NATT.');
+  $('explanation').textContent=!lit?'Utan lampans ljus blir båda sidorna mörka i vår modell.':day?'Vår plats är vänd mot ficklampan och får ljus.':'Vår plats är vänd bort från ficklampan och får inte direkt ljus.';
+  $('rotationText').textContent=`${Math.round(deg)}° av ett varv`;
+  lightGroup.style.display=lit?'':'none';nightCover.style.display=lit?'':'none';$('fullDark').setAttribute('display',lit?'none':'inline');
+  $('toggleLight').textContent=lit?'💡 Släck lampan':'💡 Tänd lampan';$('toggleLight').setAttribute('aria-pressed',String(lit));
+  angle.value=Math.round(deg);
+ }
+ function setPlay(on){playing=on; $('togglePlay').textContent=on?'⏸ Pausa rotation':'▶ Starta rotation';last=0;if(on)raf=requestAnimationFrame(tick);else cancelAnimationFrame(raf);}
+ function tick(now){if(!playing)return;if(last){deg=(deg+(now-last)*.025)%360;paint();}last=now;raf=requestAnimationFrame(tick);}
+ $('togglePlay').addEventListener('click',()=>setPlay(!playing));
+ $('toggleLight').addEventListener('click',()=>{lit=!lit;paint()});
+ $('quarter').addEventListener('click',()=>{setPlay(false);deg=(deg+90)%360;paint()});
+ $('reset').addEventListener('click',()=>{setPlay(false);deg=180;lit=true;paint()});
+ angle.addEventListener('input',()=>{setPlay(false);deg=Number(angle.value);paint()});
+ // Reglaget och knapparna styr rotationen; markeringen är fast på jordytan.
+ paint();
+})();
+</script>
+</body>
+</html>
